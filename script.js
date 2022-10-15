@@ -177,31 +177,163 @@ const leah = {
 
 // console.log(leah2.getSummary());
 
-const mark = {
-    fullName: 'Mark Miller',
-    mass: 78,
-    height: 1.69,
+// const mark = {
+//     fullName: 'Mark Miller',
+//     mass: 78,
+//     height: 1.69,
 
-    calcBMI: function() {
-        this.bmi = this.mass / this.height ** 2;
-        return this.bmi;
-    }
+//     calcBMI: function() {
+//         this.bmi = this.mass / this.height ** 2;
+//         return this.bmi;
+//     }
 
+// }
+
+
+// const john = {
+//     fullName: 'John Smith',
+//     mass: 92,
+//     height: 1.95,
+
+//     calcBMI: function() {
+//         this.bmi = this.mass / this.height ** 2;
+//         return this.bmi;
+//     }
+// };
+
+// mark.calcBMI();
+// john.calcBMI();
+
+// console.log(mark.bmi, john.bmi);
+
+// if (mark.bmi > john.bmi) {
+//     console.log(`${mark.fullName}'s BMI (${mark.bmi})
+//     is higher than ${john.fullName}'s BMI (${john.bmi})
+//     `)
+// } else if (john.bmi > mark.bmi) {
+//     console.log(`${john.fullName}'s BMI (${john.bmi})
+//     is higher than ${mark.fullName}'s BMI (${mark.bmi})
+//     `)
+// }
+
+
+// for loop keeps running while condition is TRUE
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep} 🏋🏼‍♂️`)
+// }
+
+// const leahArray = [
+//     'Leah',
+//     'Fisher',
+//     2022 - 1987,
+//     'developer',
+//     ['Emy', 'Kathryn', 'Pauline'],
+//     true,
+// ];
+
+// const types = [];
+
+// for(let i = 0; i < leahArray.length; i++) {
+    // Reading from Leah array
+    // console.log(leahArray[i], typeof leahArray[i]);
+
+    // Filling empty types array
+    // types[i] = typeof leahArray[i];
+//     types.push(typeof leahArray[i]);
+// };
+
+// console.log(types);
+
+// const years = [1991, 2007, 1969, 2020,];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//     ages.push(2022 - years[i]);
+// }
+// console.log(ages);
+
+// // continue and break statements
+// console.log('--- ONLY STRINGS ---')
+// for(let i = 0; i < leahArray.length; i++) {
+//     if (typeof leahArray[i] !== 'string') continue;
+
+//     console.log(leahArray[i], typeof leahArray[i]);
+// };
+
+// console.log('--- BREAK WITH NUMBER ---')
+// for(let i = 0; i < leahArray.length; i++) {
+//     if (typeof leahArray[i] === 'number') break;
+
+//     console.log(leahArray[i], typeof leahArray[i]);
+// };
+
+// const leahArray = [
+//     'Leah',
+//     'Fisher',
+//     2022 - 1987,
+//     'developer',
+//     ['Emy', 'Kathryn', 'Pauline'],
+//     true,
+// ];
+
+// for(let i = leahArray.length -1; i >= 0; i--) {
+//     console.log(i, leahArray[i]);
+// }
+
+// for (let exercise = 1; exercise < 4; exercise++) {
+//     console.log(`---Starting exercise ${exercise}
+//     `);
+
+//     for (let rep = 1; rep < 6; rep++) {
+//         console.log(` Exercise ${exercise}: Lifting weight repetition ${rep} 🏋🏼‍♂️`);
+//     };
+// };
+
+// for (let rep = 1; rep <= 10; rep++) {
+//         console.log(`Lifting weights repetition ${rep} 🏋🏼‍♂️`);
+//     }
+
+    // let rep = 1;
+    // while (rep <= 10) {
+    //     // console.log(`WHILE: Lifting weights repetition ${rep} 🏋🏼‍♂️`);
+    //     rep++;
+    // }
+
+    // let dice = Math.trunc(Math.random() * 6) + 1;
+
+    // while (dice !== 6) {
+    //     console.log(`You rolled a ${dice}`);
+    //     dice = Math.trunc(Math.random() * 6) + 1;
+    //     if (dice === 6) console.log('Loop is about to end...');
+    // }
+
+const calcTip = function(bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 :
+    bill * 0.2;
 }
 
+const bills = [
+    22, 295, 176, 440, 37, 105, 10, 1100, 86, 52,
+];
 
-const john = {
-    fullName: 'John Smith',
-    mass: 92,
-    height: 1.95,
+const tips = [];
+const totals = [];
 
-    calcBMI: function() {
-        this.bmi = this.mass / this.height ** 2;
-        return this.bmi;
-    }
+for (let i = 0; i < bills.length; i++) {
+    const tip = calcTip(bills[i]);
+    tips.push(tip);
+    totals.push(tip + bills[i]);
 };
 
-mark.calcBMI();
-john.calcBMI();
+console.log(bills, tips, totals);
 
-console.log(mark.bmi, john.bmi);
+const calcAverage = function(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        // sum = sum + arr[i];
+        sum += arr[i];
+    };
+    return sum / arr.length;
+};
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
